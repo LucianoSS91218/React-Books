@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": "2ad6b5e2-9c2b-4959-b740-9335c85eed74",
+      "title": "Fail Safe",
+      "author": "Eugene Burdick y Harvey Wheeler",
+      "cover": "http://localhost:5173/failsafe.jpg",
+      "intro": "Por un error militar, un cazabombardero nuclear americano recibe la orden de destruir Moscú. Los jefes militares y políticos de los dos países tratan de evitar la catástrofe.",
+      "completed": true,
+      "review": "Nos hallamos ante una novela-reportaje apasionante, cuya lectura no puede dejarse después de empezada ni olvidarse después. Los caracteres que describe son dignos de ser recordados y los detalles técnicos plenamente convincentes"
+    },
+    {
+      "id": "9942219d-eecc-42b5-a421-2d9b12736b76",
+      "title": "Código limpio",
+      "author": "Robert C. Martin",
+      "cover": "http://localhost:5173/codigolimpio.webp",
+      "intro": "Cada año, se invierten innumerables horas y se pierden numerosos recursos debido a código mal escrito, ralentizando el desarrollo, disminuyendo la productividad, generando graves fallos e incluso pudiendo acabar con la organización o empresa.",
+      "completed": false,
+      "review": "Cada año, se invierten innumerables horas y se pierden numerosos recursos debido a código mal escrito, ralentizando el desarrollo, disminuyendo la productividad, generando graves fallos e incluso pudiendo acabar con la organización o empresa. El reconocido experto de software Robert C. Martin, junto con sus colegas de Object Mentor, nos presentan sus óptimas técnicas y metodologías ágiles para limpiar el código sobre la marcha y crearlo de forma correcta, de este modo mejorará como programador. Esta obra se divide en tres partes. La primera describe los principios, patrones y prácticas para crear código limpio. La segunda incluye varios casos de estudio cuya complejidad va aumentando. Cada ejemplo es un ejercicio de limpieza y transformación de código con problemas. La tercera parte del libro contiene una lista de heurística y síntomas de código erróneo (smells) confeccionada al crear los casos prácticos. El resultado es una base de conocimientos que describe cómo pensamos cuando creamos, leemos y limpiamos código. Imprescindible para cualquier desarrollador, ingeniero de software, director de proyectos, jefe de equipo o analista de sistemas interesado en crear código de mejor calidad. ¡El libro que todo programador debe leer!"
+    }
+  ]
+}

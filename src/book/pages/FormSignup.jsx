@@ -16,7 +16,7 @@ const inputStyles = {
     margin: "15px 0",
   },
   title: {
-    fontSize: "16px",
+    fontSize: "20px",
     textAlign: "left",
   },
   input: {

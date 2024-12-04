@@ -15,7 +15,7 @@ export default function BookDetail() {
     const example = getItem(params.bookId);
     setItem(example);
   }, [isEditing]);
-  
+
   return (
     <Layout>
       <aside
@@ -24,10 +24,18 @@ export default function BookDetail() {
         }}
       >
         <h2>{item?.title}</h2>
-        <div>{item?.author}</div>
+        <div style={{ "font-size": "30px", "text-decoration": "underline" }}>
+          {item?.author}
+        </div>
+        <br />
         <div>{item?.completed ? "Completado" : "No terminado"}</div>
+        <br />
         <div>{item?.cover ? <img src={item.cover} width="400" /> : ""}</div>
-        <div>{item?.intro}</div>
+        <br />
+        <div>
+          <i>{item?.intro}</i>
+        </div>
+        <br />
         <div>{item?.review}</div>
       </aside>
       <br />

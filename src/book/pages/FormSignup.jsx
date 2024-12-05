@@ -2,8 +2,9 @@ import validate from "../components/form/validateInfo";
 import useForm from "../hooks/useForm";
 import Layout from "../components/layout";
 import { useState } from "react";
+import { useId } from "react";
 import FormSuccess from "../components/form/FormSuccess";
-
+import "./Form.css";
 const inputStyles = {
   formContainer: {
     width: "400px",
@@ -34,6 +35,7 @@ const inputStyles = {
 const FormSignup = ({ submitForm }) => {
   const {
     handleChange,
+    handleChangeGenre,
     handleOnChangeFile,
     handleSubmit,
     values,
@@ -46,6 +48,8 @@ const FormSignup = ({ submitForm }) => {
   function submitForm() {
     setIsSubmitted(true);
   }
+
+  const genreFilterId = useId();
 
   return (
     <Layout>
@@ -65,6 +69,7 @@ const FormSignup = ({ submitForm }) => {
                 <p style={inputStyles.elerror}>{errors.title}</p>
               )}
             </div>
+
             <div style={inputStyles.container}>
               <div style={inputStyles.title}>Author</div>
               <input
@@ -91,6 +96,21 @@ const FormSignup = ({ submitForm }) => {
             </div>
 
             <div style={inputStyles.container}>
+              <label style={inputStyles.title}>Genero</label>
+              <select
+                id={genreFilterId}
+                onChange={handleChangeGenre}
+                name="generos"
+              >
+                {Object.entries(values.generos).map(([key, literal]) => (
+                  <option key={key} value={key}>
+                    {literal}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div style={inputStyles.container}>
               <div style={inputStyles.title}>Cover</div>
               <input type="file" name="cover" onChange={handleOnChangeFile} />
               <div>{!!cover ? <img src={cover} width="200" /> : ""}</div>
@@ -99,6 +119,7 @@ const FormSignup = ({ submitForm }) => {
             <div style={inputStyles.container}>
               <div style={inputStyles.title}>intro</div>
               <input
+                className="intro"
                 style={inputStyles.input}
                 type="text"
                 name="intro"
@@ -112,6 +133,7 @@ const FormSignup = ({ submitForm }) => {
             <div style={inputStyles.container}>
               <div style={inputStyles.title}>review</div>
               <input
+                className="review"
                 style={inputStyles.input}
                 type="text"
                 name="review"
@@ -122,23 +144,16 @@ const FormSignup = ({ submitForm }) => {
                 <p style={inputStyles.elerror}>{errors.review}</p>
               )}
             </div>
-            <button
-              type="submit"
-              onClick={handleSubmit}
-              value="Register book"
-              style={{
-                padding: "15px 20px",
-                minWidth: "200px",
-                border: "none",
-                borderRadius: "5px",
-                backgroundColor: "#1e9638",
-                color: "white",
-                fontWeigth: "bolder",
-                fontSize: "18px",
-              }}
-            >
-              Register
-            </button>
+            <div className="register">
+              <button
+                className="submitt"
+                type="submit"
+                onClick={handleSubmit}
+                value="Register book"
+              >
+                Register
+              </button>
+            </div>
           </form>
         ) : (
           <FormSuccess />
@@ -149,4 +164,3 @@ const FormSignup = ({ submitForm }) => {
 };
 
 export default FormSignup;
-

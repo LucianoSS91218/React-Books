@@ -2,7 +2,7 @@ import validate from "../components/form/validateInfo";
 
 import { useState, useEffect } from "react";
 import { useBooks } from "../store zustand/Store";
-
+import "./Form.css";
 const inputStyles = {
   formContainer: {
     width: "400px",
@@ -156,7 +156,7 @@ const FormUpdate = ({
       <div style={inputStyles.container}>
         <div style={inputStyles.title}>Cover</div>
         <input type="file" name="cover" onChange={handleOnChangeFile} />
-        <div>
+        <div className="padreimg">
           {!!values.cover ? <img src={values.cover} width="200" /> : ""}
         </div>
       </div>
@@ -165,6 +165,7 @@ const FormUpdate = ({
         <div style={inputStyles.title}>intro</div>
         <input
           style={inputStyles.input}
+          className="intro"
           type="text"
           name="intro"
           onChange={handleChange}
@@ -176,6 +177,7 @@ const FormUpdate = ({
       <div style={inputStyles.container}>
         <div style={inputStyles.title}>review</div>
         <input
+          className="review"
           style={inputStyles.input}
           type="text"
           name="review"
@@ -184,15 +186,17 @@ const FormUpdate = ({
         />
         {errors.review && <p style={inputStyles.elerror}>{errors.review}</p>}
       </div>
-
-      <button
-        type="submit"
-        onClick={handleSubmit}
-        value="Update book"
-        style={inputStyles.submit}
-      >
-        Update
-      </button>
+      <div className="update">
+        <button
+          className="submitt"
+          type="submit"
+          onClick={handleSubmit}
+          value="Update book"
+          style={inputStyles.submit}
+        >
+          Update
+        </button>
+      </div>
     </form>
   );
 };

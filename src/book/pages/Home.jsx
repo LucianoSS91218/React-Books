@@ -27,7 +27,8 @@ export default function Home() {
     <Layout>
       <div id="filtercategory">
         <label style={{ marginRight: "8px" }}>Filtrado:</label>
-        <select id={genreFilterId} onChange={handleChangeGenre}>
+        <select id={genreFilterId} onChange={handleChangeGenre} 
+          style={{ width: "15%", padding: "10px", borderRadius: "6px" }}>
           <option value="all">Todos</option>
           <option value="arte">Arte</option>
           <option value="laptops">Astrologia</option>

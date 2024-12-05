@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import "./Navbar.css";
 export default function NavBar() {
   const linkStyle = {
     padding: "10px",
@@ -24,7 +24,7 @@ export default function NavBar() {
   };
 
   return (
-    <div style={navContainerStyle}>
+    <div style={navContainerStyle} className="navbar">
       <Link to="/" style={linkStyle}>
         HOME
       </Link>

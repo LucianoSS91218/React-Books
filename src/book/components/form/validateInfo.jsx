@@ -10,8 +10,8 @@ export default function validateInfo(values) {
     errors.title = "Title must contain at least 6 characters";
   }
 
-  if (values.title.length > 22) {
-    errors.title = "Title must contain max 22 characters";
+  if (values.title.length > 45) {
+    errors.title = "Title must contain max 45 characters";
   }
 
   if (!/^[A-Za-z]+/.test(values.author.trim())) {

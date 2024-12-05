@@ -115,7 +115,7 @@ const useForm = (callback, validate) => {
       values.author === "" ||
       values.intro === "" ||
       values.review === "" ||
-      genres === "all"
+      genres !== "all"
     ) {
       return;
     }

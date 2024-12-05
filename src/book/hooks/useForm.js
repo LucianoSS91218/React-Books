@@ -72,7 +72,7 @@ const useForm = (callback, validate) => {
     },
   });
   const [cover, setCover] = useState("");
-  const [genre, setGenre] = useState("all");
+  const [genres, setGenres] = useState(["all"]);
   const [completed, setCompleted] = useState(false);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -115,7 +115,7 @@ const useForm = (callback, validate) => {
       values.author === "" ||
       values.intro === "" ||
       values.review === "" ||
-      genre === "all"
+      genres === "all"
     ) {
       return;
     }
@@ -125,7 +125,7 @@ const useForm = (callback, validate) => {
       title: values.title,
       author: values.author,
       cover: cover,
-      genre: genre,
+      genres: genres,
       completed: completed,
       intro: values.intro,
       review: values.review,
@@ -146,7 +146,7 @@ const useForm = (callback, validate) => {
 
   return {
     handleChange,
-    handleChangeGenre,
+    handleChangeGenres,
     handleOnChangeFile,
     handleSubmit,
     values,

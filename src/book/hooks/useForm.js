@@ -32,6 +32,7 @@ const useForm = (callback, validate) => {
       erotico: "Erotico",
       espionaje: "Espionaje",
       fantasia: "Fantasia",
+      ficcion: "Ficcion",
       filosofia: "Filosofia",
       fisica: "Fisica",
       gastronomia: "Gastronomia",

@@ -8,7 +8,9 @@ export default function Layout({ children }) {
   return (
     <div>
       <NavBar />
-      <div style={containerStyle}>{children}</div>
+      <div className="layout" style={containerStyle}>
+        {children}
+      </div>
     </div>
   );
 }

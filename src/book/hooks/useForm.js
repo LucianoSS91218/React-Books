@@ -11,6 +11,7 @@ const useForm = (callback, validate) => {
     generos: {
       all: "Todos",
       arte: "Arte",
+      astrologia: "Astrologia",
       autoayuda: "Autoayuda",
       autobiografico: "Autobiografico",
       aventuras: "Aventuras",
@@ -35,6 +36,10 @@ const useForm = (callback, validate) => {
       fisica: "Fisica",
       gastronomia: "Gastronomia",
       geografia: "Geografia",
+      historia: "Historia",
+      humor: "Humor",
+      idiomas: "Idiomas",
+      infantil: "Infantil",
       informatica: "Informatica",
       intriga: "Intriga",
       magia: "Magia",

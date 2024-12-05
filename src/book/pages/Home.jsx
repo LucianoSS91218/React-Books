@@ -23,6 +23,13 @@ export default function Home() {
 
   const filteredBooks = filterBooks(books);
 
+    useEffect(() => {
+    const updateLocalStorage = () => {
+      window.localStorage.setItem("books", JSON.stringify(books));
+    };
+    updateLocalStorage();
+  }, []);
+
   return (
     <Layout>
       <div id="filtercategory">

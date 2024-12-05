@@ -1,0 +1,57 @@
+.padreimg {
+  display: flex;
+  justify-content: center;
+}
+
+.register,
+.update {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register .submitt,
+.update .submitt {
+  padding: 14px 12px;
+  width: 40%;
+  border: none;
+  border-radius: 5px;
+  background-color: #1e9638;
+  color: #fff;
+  font-weight: bold;
+  font-size: 19px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .intro,
+  .review {
+    width: 40%;
+  }
+
+  .padreimg {
+    justify-content: flex-start;
+  }
+
+  .padreimg img {
+    width: 74%;
+  }
+
+  input {
+    max-width: 35%;
+  }
+
+  select {
+    max-width: 40%;
+  }
+
+  .register,
+  .update {
+    justify-content: flex-start;
+  }
+
+  .update .submitt {
+    width: 20%;
+    padding: 7px 7px;
+  }
+}

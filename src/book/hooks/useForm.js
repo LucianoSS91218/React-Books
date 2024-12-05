@@ -8,15 +8,71 @@ const useForm = (callback, validate) => {
     author: "",
     intro: "",
     review: "",
+    generos: {
+      all: "Todos",
+      arte: "Arte",
+      autoayuda: "Autoayuda",
+      autobiografico: "Autobiografico",
+      aventuras: "Aventuras",
+      belico: "Belico",
+      biologia: "Biologia",
+      clasico: "Clasico",
+      "ciencia ficcion": "Ciencia Ficcion",
+      "ciencias naturales": "Ciencias Naturales",
+      cine: "Cine",
+      cuentos: "Cuentos",
+      critica: "Critica",
+      cronicas: "Cronicas",
+      deportes: "Deportes",
+      diccionarios: "Diccionarios",
+      didactico: "Didactico",
+      divulgacion: "Divulgacion",
+      drama: "Drama",
+      erotico: "Erotico",
+      espionaje: "Espionaje",
+      fantasia: "Fantasia",
+      filosofia: "Filosofia",
+      fisica: "Fisica",
+      gastronomia: "Gastronomia",
+      geografia: "Geografia",
+      informatica: "Informatica",
+      intriga: "Intriga",
+      magia: "Magia",
+      "manuales y cursos": "Manuales y Cursos",
+      matematicas: "Matematicas",
+      medicina: "Medicina",
+      medieval: "Medieval",
+      misterio: "Misterio",
+      mitos: "Mitos",
+      musica: "Musica",
+      negocios: "Negocios",
+      novela: "Novela",
+      "novela negra": "Novela Negra",
+      otros: "Otros",
+      periodismo: "Periodismo",
+      poesia: "Poesia",
+      policial: "Policial",
+      politica: "Politica",
+      psicologia: "Psicologia",
+      relato: "Relato",
+      quimica: "Quimica",
+      "salud y bienestar": "Salud y Bienestar",
+      satira: "Satira",
+      sexualidad: "Sexualidad",
+      sociologia: "Sociologia",
+      tecnologia: "Tecnologia",
+      terror: "Terror",
+      thriller: "Thriller",
+    },
   });
   const [cover, setCover] = useState("");
+  const [genre, setGenre] = useState("all");
   const [completed, setCompleted] = useState(false);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, checked } = e.target;
-
     setValues({
       ...values,
       [name]: name === "completed" ? checked : value,
@@ -25,6 +81,11 @@ const useForm = (callback, validate) => {
       setCompleted(true);
     }
     setErrors(validate(values));
+  };
+
+  const handleChangeGenre = (e) => {
+    const { value } = e.target;
+    setGenre(value);
   };
 
   function handleOnChangeFile(e) {
@@ -47,7 +108,8 @@ const useForm = (callback, validate) => {
       values.title === "" ||
       values.author === "" ||
       values.intro === "" ||
-      values.review === ""
+      values.review === "" ||
+      genre === "all"
     ) {
       return;
     }
@@ -57,12 +119,12 @@ const useForm = (callback, validate) => {
       title: values.title,
       author: values.author,
       cover: cover,
+      genre: genre,
       completed: completed,
       intro: values.intro,
       review: values.review,
     };
 
-    //it is optional whether your book is completed or not
     if (completed === true || completed === false) {
       createItem(newBook);
       setIsSubmitting(true);
@@ -78,6 +140,7 @@ const useForm = (callback, validate) => {
 
   return {
     handleChange,
+    handleChangeGenre,
     handleOnChangeFile,
     handleSubmit,
     values,
@@ -87,3 +150,4 @@ const useForm = (callback, validate) => {
 };
 
 export default useForm;
+

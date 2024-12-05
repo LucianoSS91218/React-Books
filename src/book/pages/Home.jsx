@@ -52,6 +52,7 @@ export default function Home() {
           <option value="erotico">Erotico</option>
           <option value="espionaje">Espionaje</option>
           <option value="fantasia">Fantasia</option>
+          <option value="ficcion">Ficcion</option>
           <option value="filosofia">Filosofia</option>
           <option value="fisica">Fisica</option>
           <option value="gastronomia">Gastronomia</option>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../components/layout";
 import { useBooks } from "../store zustand/Store";
-
+import "./bookDetail.css";
 import FormUpdate from "../pages/FormUpdate.jsx";
 export default function BookDetail() {
   const [item, setItem] = useState({});
@@ -24,13 +24,15 @@ export default function BookDetail() {
         }}
       >
         <h2>{item?.title}</h2>
-        <div style={{ "font-size": "30px", "text-decoration": "underline" }}>
+        <div style={{ fontSize: "30px", textDecoration: "underline" }}>
           {item?.author}
         </div>
         <br />
         <div>{item?.completed ? "Completado" : "No terminado"}</div>
         <br />
-        <div>{item?.cover ? <img src={item.cover} width="400" /> : ""}</div>
+        <div className="padreimagen">
+          {item?.cover ? <img src={item.cover} width="400" /> : ""}
+        </div>
         <br />
         <div>
           <i>{item?.intro}</i>

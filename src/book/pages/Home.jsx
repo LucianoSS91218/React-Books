@@ -38,7 +38,7 @@ export default function Home() {
           style={{ width: "15%", padding: "10px", borderRadius: "6px" }}>
           <option value="all">Todos</option>
           <option value="arte">Arte</option>
-          <option value="laptops">Astrologia</option>
+          <option value="astrologia">Astrologia</option>
           <option value="autoayuda">Autoayuda</option>
           <option value="autobiografico">Autobiografico</option>
           <option value="aventuras">Aventuras</option>

@@ -3,6 +3,7 @@ import Book from "../components/book";
 import Layout from "../components/layout";
 import { useBooks } from "../store zustand/Store.js";
 import { useFilters } from "../store zustand/FiltersStore.js";
+import { useEffect} from "react;
 
 export default function Home() {
   const booksContainer = {
@@ -28,7 +29,7 @@ export default function Home() {
       window.localStorage.setItem("books", JSON.stringify(books));
     };
     updateLocalStorage();
-  }, []);
+  }, [books]);
 
   return (
     <Layout>

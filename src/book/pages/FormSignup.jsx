@@ -25,6 +25,11 @@ const inputStyles = {
     borderRadius: "5px",
     fontSize: "16px",
   },
+  textarea: {
+    padding: "20px",
+    borderRadius: "5px",
+    fontSize: "16px",
+  },
   elerror: {
     color: "red",
     margin: 0,
@@ -35,21 +40,84 @@ const inputStyles = {
 const FormSignup = ({ submitForm }) => {
   const {
     handleChange,
-    handleChangeGenre,
+    handleChangeGenres,
     handleOnChangeFile,
     handleSubmit,
     values,
+    genre,
     cover,
     errors,
   } = useForm(submitForm, validate);
-
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   function submitForm() {
     setIsSubmitted(true);
   }
-
+  console.log(genre);
   const genreFilterId = useId();
+
+  const generos = {
+    all: "Todos",
+    arte: "Arte",
+    astrologia: "Astrologia",
+    autoayuda: "Autoayuda",
+    autobiografico: "Autobiografico",
+    aventuras: "Aventuras",
+    belico: "Belico",
+    biologia: "Biologia",
+    clasico: "Clasico",
+    "ciencia ficcion": "Ciencia Ficcion",
+    "ciencias naturales": "Ciencias Naturales",
+    cine: "Cine",
+    cuentos: "Cuentos",
+    critica: "Critica",
+    cronicas: "Cronicas",
+    deportes: "Deportes",
+    diccionarios: "Diccionarios",
+    didactico: "Didactico",
+    divulgacion: "Divulgacion",
+    drama: "Drama",
+    erotico: "Erotico",
+    espionaje: "Espionaje",
+    fantasia: "Fantasia",
+    ficcion: "Ficcion",
+    filosofia: "Filosofia",
+    fisica: "Fisica",
+    gastronomia: "Gastronomia",
+    geografia: "Geografia",
+    historia: "Historia",
+    humor: "Humor",
+    idiomas: "Idiomas",
+    infantil: "Infantil",
+    informatica: "Informatica",
+    intriga: "Intriga",
+    magia: "Magia",
+    "manuales y cursos": "Manuales y Cursos",
+    matematicas: "Matematicas",
+    medicina: "Medicina",
+    medieval: "Medieval",
+    misterio: "Misterio",
+    mitos: "Mitos",
+    musica: "Musica",
+    negocios: "Negocios",
+    novela: "Novela",
+    "novela negra": "Novela Negra",
+    otros: "Otros",
+    periodismo: "Periodismo",
+    poesia: "Poesia",
+    policial: "Policial",
+    politica: "Politica",
+    psicologia: "Psicologia",
+    relato: "Relato",
+    quimica: "Quimica",
+    "salud y bienestar": "Salud y Bienestar",
+    satira: "Satira",
+    sexualidad: "Sexualidad",
+    sociologia: "Sociologia",
+    tecnologia: "Tecnologia",
+    terror: "Terror",
+    thriller: "Thriller",
+  };
 
   return (
     <Layout>
@@ -99,10 +167,10 @@ const FormSignup = ({ submitForm }) => {
               <label style={inputStyles.title}>Genero</label>
               <select
                 id={genreFilterId}
-                onChange={handleChangeGenre}
+                onChange={handleChangeGenres}
                 name="generos"
               >
-                {Object.entries(values.generos).map(([key, literal]) => (
+                {Object.entries(generos).map(([key, literal]) => (
                   <option key={key} value={key}>
                     {literal}
                   </option>
@@ -118,9 +186,9 @@ const FormSignup = ({ submitForm }) => {
 
             <div style={inputStyles.container}>
               <div style={inputStyles.title}>intro</div>
-              <input
+              <textarea
                 className="intro"
-                style={inputStyles.input}
+                style={inputStyles.textarea}
                 type="text"
                 name="intro"
                 onChange={handleChange}
@@ -132,9 +200,9 @@ const FormSignup = ({ submitForm }) => {
             </div>
             <div style={inputStyles.container}>
               <div style={inputStyles.title}>review</div>
-              <input
+              <textarea
                 className="review"
-                style={inputStyles.input}
+                style={inputStyles.textarea}
                 type="text"
                 name="review"
                 onChange={handleChange}

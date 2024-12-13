@@ -44,7 +44,6 @@ const FormSignup = ({ submitForm }) => {
     handleOnChangeFile,
     handleSubmit,
     values,
-    genre,
     cover,
     errors,
   } = useForm(submitForm, validate);

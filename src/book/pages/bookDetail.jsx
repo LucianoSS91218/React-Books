@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../components/layout";
+
 import { useBooks } from "../store zustand/Store";
 import "./bookDetail.css";
 import FormUpdate from "../pages/FormUpdate.jsx";
@@ -18,7 +19,7 @@ export default function BookDetail() {
 
   return (
     <Layout>
-      <aside
+      <section
         onDoubleClick={() => {
           setIsEditing(item?.id);
         }}
@@ -28,18 +29,22 @@ export default function BookDetail() {
           {item?.author}
         </div>
         <br />
+        <section>
+          Generos: {item ? item.genres?.map((a) => a).join(" ") : ""}
+        </section>
+        <br />
         <div>{item?.completed ? "Completado" : "No terminado"}</div>
         <br />
         <div className="padreimagen">
           {item?.cover ? <img src={item.cover} width="400" /> : ""}
         </div>
         <br />
-        <div>
+        <div id="intro">
           <i>{item?.intro}</i>
         </div>
         <br />
-        <div>{item?.review}</div>
-      </aside>
+        <p>{item?.review}</p>
+      </section>
       <br />
       <br />
       <br />

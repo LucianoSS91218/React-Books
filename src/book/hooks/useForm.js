@@ -63,7 +63,7 @@ const useForm = (callback, validate) => {
       title: values.title,
       author: values.author,
       cover: cover,
-      genres: genre,
+      genres: [genre],
       completed: values.completed,
       intro: values.intro,
       review: values.review,

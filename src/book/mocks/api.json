@@ -5,7 +5,7 @@
       "title": "Fail Safe",
       "author": "Eugene Burdick y Harvey Wheeler",
       "genres": ["drama", "belico", "politica"],
-      "cover": "http://localhost:5173/failsafe.jpg",
+      "cover": "./assets/success-icon.png",
       "intro": "Por un error militar, un cazabombardero nuclear americano recibe la orden de destruir Moscú. Los jefes militares y políticos de los dos países tratan de evitar la catástrofe.",
       "completed": true,
       "review": "Nos hallamos ante una novela-reportaje apasionante, cuya lectura no puede dejarse después de empezada ni olvidarse después. Los caracteres que describe son dignos de ser recordados y los detalles técnicos plenamente convincentes"
